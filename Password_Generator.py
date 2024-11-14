@@ -1,4 +1,5 @@
-import random 
+import random
+import base64
 
 print('Welcome To Your Password Generator')
 
@@ -9,7 +10,7 @@ chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*().,?012345
 number = int(input('Amount of passwords to generate: '))
 length = int(input('Input your password length: '))
 
-print('\nHere are your passwords and their strengths:\n')
+print('\nHere are your passwords, their strengths, and base64 encoded versions:\n')
 
 # 비밀번호 강도 평가 함수
 def evaluate_password_strength(password):
@@ -32,4 +33,10 @@ def evaluate_password_strength(password):
 for pwd in range(number):
     password = ''.join(random.choice(chars) for c in range(length))  # 비밀번호 생성
     strength = evaluate_password_strength(password)  # 강도 평가
-    print(f'{password}  -> 강도: {strength}')
+
+    # base64 인코딩
+    encoded_password = base64.b64encode(password.encode('utf-8')).decode('utf-8')
+
+    # 결과 출력
+    print(f'{password}  -> 강도: {strength}  -> Base64: {encoded_password}')
+ 
