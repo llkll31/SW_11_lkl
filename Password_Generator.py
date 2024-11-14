@@ -40,3 +40,4 @@ for pwd in range(number):
     # 결과 출력
     print(f'{password}  -> 강도: {strength}  -> Base64: {encoded_password}')
  
+ 
