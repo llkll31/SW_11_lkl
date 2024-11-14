@@ -1,21 +1,35 @@
 import random 
 
-print('Welcom To Your Password Generator')
+print('Welcome To Your Password Generator')
 
-chars = 'abcdefgjustghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*().,?0123456789'
+# 사용할 문자셋 정의
+chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*().,?0123456789'
 
-number = input('Amount of passwords to generate: ')
-number = int(number)
+# 생성할 비밀번호 개수 및 길이 입력
+number = int(input('Amount of passwords to generate: '))
+length = int(input('Input your password length: '))
 
-length = input('Input your password length: ')
-length = int(length)
+print('\nHere are your passwords and their strengths:\n')
 
-print('\nhere are your password: ')
+# 비밀번호 강도 평가 함수
+def evaluate_password_strength(password):
+    has_lower = any(c.islower() for c in password)
+    has_upper = any(c.isupper() for c in password)
+    has_digit = any(c.isdigit() for c in password)
+    has_special = any(c in '!@#$%^&*().,?' for c in password)
+    
+    # 강도 평가 조건
+    if len(password) >= 12 and has_lower and has_upper and has_digit and has_special:
+        return "매우 강함"
+    elif len(password) >= 8 and has_lower and has_upper and has_digit and has_special:
+        return "강함"
+    elif len(password) >= 6 and (has_lower + has_upper + has_digit + has_special >= 3):
+        return "보통"
+    else:
+        return "약함"
 
+# 비밀번호 생성 및 강도 평가
 for pwd in range(number):
-    passwords = ''
-    for c in range(length):
-        passwords += random.choice(chars)
-    print(passwords)
-
-
+    password = ''.join(random.choice(chars) for c in range(length))  # 비밀번호 생성
+    strength = evaluate_password_strength(password)  # 강도 평가
+    print(f'{password}  -> 강도: {strength}')
