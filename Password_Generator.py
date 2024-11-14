@@ -31,7 +31,18 @@ def evaluate_password_strength(password):
 
 # 비밀번호 생성 및 강도 평가
 for pwd in range(number):
-    password = ''.join(random.choice(chars) for c in range(length))  # 비밀번호 생성
+    password = ''
+    last_char = ''  # 마지막으로 추가된 문자
+
+    for c in range(length):
+        while True:
+            char = random.choice(chars)
+            # 연속된 문자가 나오지 않도록 처리
+            if char != last_char:
+                password += char
+                last_char = char  # 마지막으로 추가된 문자를 갱신
+                break  # 연속된 문자가 아니면 반복 종료
+
     strength = evaluate_password_strength(password)  # 강도 평가
 
     # base64 인코딩
