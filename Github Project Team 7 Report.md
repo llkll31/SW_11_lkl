@@ -53,16 +53,16 @@
 
  ```
 ### 2) Milestone
-![github](./1.png)
+![1](https://github.com/user-attachments/assets/5bbd4686-dcb6-453b-9c25-f7463a8841e8)
 ### 3) Open 상태인Issue
-![github](./2.png)
+![2](https://github.com/user-attachments/assets/54cbe7d1-4c38-4a3c-97bf-ab3b58b37b08)
 ### 4) Closed 상태인Issue
-![github](./3.png)
+![3](https://github.com/user-attachments/assets/76154083-25f3-4ca7-9da9-6ff082d2b012)
 ### 5) 최종적Project 보드
-![github](./4.png)
+![5](https://github.com/user-attachments/assets/a772cf21-e6e3-4693-9480-133d2d4ba792)
 ### 6) Requirements.txt
 ### 7) PR탭화면
-![github](./5.png)
+![6](https://github.com/user-attachments/assets/8d7d4c94-d489-4d2a-b2b6-76cb42d25a49)
 ### 8) 실행화면
 
 ### 부록:
