@@ -53,11 +53,16 @@
 
  ```
 ### 2) Milestone
+![github](./1.png)
 ### 3) Open 상태인Issue
+![github](./2.png)
 ### 4) Closed 상태인Issue
+![github](./3.png)
 ### 5) 최종적Project 보드
+![github](./4.png)
 ### 6) Requirements.txt
 ### 7) PR탭화면
+![github](./5.png)
 ### 8) 실행화면
 
 ### 부록:
